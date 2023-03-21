@@ -37,12 +37,13 @@ void loop()
     lis3dh.getEvent(&event);
 
 
-    StaticJsonDocument<48> doc;
+    StaticJsonDocument<96> doc;
     doc["device"] = DEVICE;
     doc["xValue"] = event.acceleration.x;
     doc["yValue"] = event.acceleration.y;
     doc["zValue"] = event.acceleration.z;
     String output;
+
     serializeJson(doc, output);
 
     HTTPClient http;
