@@ -38,6 +38,7 @@ void loop()
 
 
     StaticJsonDocument<48> doc;
+    doc["device"] = DEVICE;
     doc["xValue"] = event.acceleration.x;
     doc["yValue"] = event.acceleration.y;
     doc["zValue"] = event.acceleration.z;
@@ -66,5 +67,5 @@ void loop()
   {
     Serial.println("Error in WiFi connection");
   }
-  delay(10000);
+  delay(5000);
 }
